@@ -131,5 +131,4 @@ def downloadvideo(sessionId):
         return jsonify({"error": "An error occured {err}"}), 404
 
 
-if __name__ == '__main__':
-    app.run(debug=False)
+
