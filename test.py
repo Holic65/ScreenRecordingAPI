@@ -7,7 +7,7 @@ with open(chunk_path, 'rb') as chunk_file:
     encoded_chunk = base64.b64encode(chunk_file.read()).decode('utf-8')
 
 # URL of the Flask API endpoints
-base_url = 'https://screenrecordingapi.onrender.com'  # Update with your server's URL
+base_url = 'https://screenrecordingapi.onrender.com' 
 start_recording_url = f'{base_url}/start-recording/'
 
 # Start a new recording session and get the session ID
@@ -23,7 +23,10 @@ try:
     chunk_data = {'videoChunk': encoded_chunk}
     response = requests.post(
         f'{base_url}/stream-recording/{session_id}', json=chunk_data)
+    
     print(response.content)
+    
+    #Downloads video to device
     response = requests.post(f'{base_url}/stop-recording/{session_id}')
     if response.status_code == 200:
         video_content = response.content
