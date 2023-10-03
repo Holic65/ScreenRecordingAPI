@@ -81,10 +81,8 @@ def streamRecordingData(sessionId):
         if 'videoChunk' in data:
             encoded_chunk = data['videoChunk']
             decoded_chunk = base64.b64decode(encoded_chunk)
-            # You can change the file format and name as needed
             output_file_path = 'recordings/record'+sessionId+'.webm'
 
-            # Write the binary data to the video file
             with open(output_file_path, 'wb') as video_file:
                 video_file.write(decoded_chunk)
 
