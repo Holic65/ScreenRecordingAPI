@@ -8,7 +8,10 @@ ON BEGINING OF RECORDING A GET REQUEST IS SENT TO THE ENDPOINT BELOW
 'https://screenrecordingapi.onrender.com/start-recording/'
 
 THIS ENDPOINT RETURNS SESSIONID AS JSON FORMAT 
-responseData = {'sessionID': sessionID}
+ 
+ {
+    'sessionID': sessionID
+ }
 
 This id is what this endpoints use to track each recording being sent to the endpoint 
 #NOTE after 7mins a session authomatically ends
@@ -18,8 +21,13 @@ THIS API RECEIVES VIDEO IN BINARY FORMAT(base64)
 THE BINARY FORMAT IS SENT AS A POST REQUEST TO THE ENDPOINT BELOW
 'https://screenrecordingapi.onrender.com/stream-recording/<sessionID>'
 
+The binary format of video is sent to the above endpoint using json format
+        
+        {
+            'videoChunk': encodedvideo
+        }
+
 The sessionId must be the same the on returned from 'https://screenrecordingapi.onrender.com/start-recording/'
-The binary format of video is sent to the above endpoint
 
 
 
