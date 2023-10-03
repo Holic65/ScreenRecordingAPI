@@ -7,7 +7,7 @@ with open(chunk_path, 'rb') as chunk_file:
     encoded_chunk = base64.b64encode(chunk_file.read()).decode('utf-8')
 
 # URL of the Flask API endpoints
-base_url = 'http://127.0.0.1:5000'  # Update with your server's URL
+base_url = 'https://screenrecordingapi.onrender.com'  # Update with your server's URL
 start_recording_url = f'{base_url}/start-recording/'
 
 # Start a new recording session and get the session ID
