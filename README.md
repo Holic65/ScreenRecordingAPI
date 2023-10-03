@@ -9,9 +9,9 @@ ON BEGINING OF RECORDING A GET REQUEST IS SENT TO THE ENDPOINT BELOW
 
 THIS ENDPOINT RETURNS SESSIONID AS JSON FORMAT 
  
- {
-    'sessionID': sessionID
- }
+        {
+            'sessionID': sessionID
+        }
 
 This id is what this endpoints use to track each recording being sent to the endpoint 
 #NOTE after 7mins a session authomatically ends
